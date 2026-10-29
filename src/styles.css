@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700&family=Noto+Serif+Ethiopic:wght@600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #1c2416;
+  --color-paper: #f3efe4;
+  --color-surface: #fffdf8;
+  --color-muted: #5e6758;
+  --color-line: #ddd6c8;
+  --color-primary: #1b5e45;
+  --color-primary-fg: #f4faf6;
+  --color-accent: #9a3412;
+  --color-accent-fg: #fffaf6;
+  --font-sans: "Noto Sans Ethiopic", "Noto Sans", system-ui, sans-serif;
+  --font-serif: "Noto Serif Ethiopic", "Noto Serif", Georgia, serif;
+  --radius-card: 0.875rem;
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .print-sheet {
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "LHRIA Transfer Fee",
+      "hasCanvas": false,
+      "bodyTextLen": 28,
+      "bodyTextHash": "a92511704355877937d2ff5501e56895144f878a716f331cba3a518d0b1f63cd",
+      "bodyTextPrefix": "LHRIA የስም ዝውውር ክፍያ በመከፈት ላይ…",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "LHRIA Transfer Fee",
+      "hasCanvas": false,
+      "bodyTextLen": 256,
+      "bodyTextHash": "1acad1f367acb48115e8e2fc5ca71e6769ca4c90e3d91117ad34baaf69e72184",
+      "bodyTextPrefix": "ADDIS ABABA LHRIA የሥም ዝዉዉር ክፍያ ንፋስ ስልክ ላፍቶ ክፍለ ከተማ Property tran",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [
+    "BRAND NOTE: no custom public/og.jpg — the platform will serve the og.grok.me placeholder. Custom cards are the default for games of every kind (DOM board/word games included), whimsical apps, creative tools, and brand-forward pages — only plain utilities (converters, CRUD trackers, admin dashboards) keep the placeholder. If this app is not a plain utility, finish the brand-asset pass per /workspace/.grok/skills/og/SKILL.md."
+  ],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
