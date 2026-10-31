@@ -4,8 +4,8 @@ import { ROLES, type Role } from "@/lib/lhria/types";
 import { Btn, Note, SelectField, TextField } from "./fields";
 
 const DEFAULTS: Record<Role, string> = {
-  "Authorized User": "user@lhria2026",
-  "Admin Level 1": "admin1@LHRIA2026",
+  "Authorized User": "user@AA2026",
+  "Admin Level 1": "admin@AA2026",
   "Admin Level 2": "h@mlet212719",
 };
 
