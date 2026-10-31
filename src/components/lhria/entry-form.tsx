@@ -28,7 +28,21 @@ export function EntryForm({ onSaved }: { onSaved: (id: string) => void }) {
   const clearDraft = useLhria((s) => s.clearDraft);
   const saveRecord = useLhria((s) => s.saveRecord);
   const [note, setNote] = useState<{ tone: "good" | "bad"; text: string } | null>(null);
+ // 🔽 PASTE THE NEW CONFIGURATION BLOCK DIRECTLY HERE 🔽
 
+  // 🔐 Fetch the active logged-in officer's profile tracking hook from the system store
+  const session = useLhria((s) => s.session);
+
+  // 1️⃣ AUTOMATED DEFAULT: Set the text input value to the active user's Full Name
+  const [specialistName, setSpecialistName] = useState(session?.fullName || "");
+
+  // 2️⃣ AUTOMATED DEFAULT: Calculate today's date automatically (YYYY-MM-DD)
+  const [orderDate, setOrderDate] = useState(() => new Date().toISOString().slice(0, 10));
+
+  // 3️⃣ AUTOMATED DEFAULT: Force "To be Paid" as the fallback payment state
+  const [paymentStatus, setPaymentStatus] = useState<"To be Paid" | "Paid" | "Not Paid">("To be Paid");
+
+  // 🔼 END OF PASTED CONFIGURATION BLOCK 🔼
   const breakdown = useMemo(() => calculate(draft, grades), [draft, grades]);
   const other = draft.propertyType === TYPE_OTHER;
   const apt = draft.propertyType === TYPE_APT;
