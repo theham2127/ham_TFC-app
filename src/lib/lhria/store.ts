@@ -221,77 +221,10 @@ export const useLhria = create<State>()(
       },
       setGrades: (grades) => set({ grades }),
       resetGrades: () => set({ grades: DEFAULT_GRADES }),
-      seedSamples: () => {
-        const session = get().session;
-        if (!session) return;
-        const now = new Date();
-        const base = workedExample(now);
-        const drafts: EntryDraft[] = [
-          { ...base, officer: session.fullName || session.username },
-          {
-            ...emptyDraft(now),
-            ownerName: "ሳራ መኮንን",
-            woreda: "[12]",
-            phone: "0922001100",
-            fcn: "9988776655443322",
-            propertyId: "AA00004410",
-            propertyType: "አፓርትመንት",
-            reason: "በሽያጭ",
-            previousPrice: 4_200_000,
-            currentPrice: 6_500_000,
-            landArea: null,
-            tenure: "ሊዝ",
-            landGrade: "1/2",
-            usePlan: "መኖሪያ",
-            usePhysical: "መኖሪያ",
-            apartment: 96,
-            sharePercent: 100,
-            paymentStatus: "የተከፈለ",
-            officer: session.fullName || session.username,
-            orderDate: base.orderDate,
-          },
-          {
-            ...emptyDraft(now),
-            ownerName: "ዮሐንስ ተስፋዬ",
-            woreda: "[05]",
-            phone: "0933445566",
-            fcn: "1122334455667788",
-            propertyId: "AA00001880",
-            propertyType: "ኮንዶሚንየም",
-            reason: "በዉርስ",
-            previousPrice: null,
-            currentPrice: null,
-            tenure: "ነባርና ሊዝ",
-            landGrade: "3/1",
-            usePlan: "መኖሪያ",
-            usePhysical: "መኖሪያ",
-            condo: 74,
-            sharePercent: 50,
-            paymentStatus: "ያልተከፈለ",
-            officer: session.fullName || session.username,
-            orderDate: base.orderDate,
-          },
-        ];
-        const grades = get().grades;
-        const existing = get().records;
-        const created: Transaction[] = [];
-        drafts.forEach((draft) => {
-          if (existing.some((record) => record.propertyId.toLowerCase() === draft.propertyId.toLowerCase())) return;
-          const breakdown = calculate(draft, grades);
-          if (breakdown.totalFee == null) return;
-          const stamp = new Date().toISOString();
-          created.push({
-            ...draft,
-            id: nextId([...existing, ...created]),
-            fee: breakdown.totalFee,
-            securityFund: breakdown.securityFund ?? 0,
-            createdBy: session.username,
-            createdAt: stamp,
-            updatedAt: stamp,
-          });
-        });
-        set({ records: [...created, ...existing] });
-      },
+      
+      // 🔒 SECURED: Testing data generator disabled to completely fix visual leak drawer
+      seedSamples: () => {},
+      
       setPayment: (id, paymentStatus) => {
         const now = new Date().toISOString();
         set({
