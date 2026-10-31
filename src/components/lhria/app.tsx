@@ -76,16 +76,6 @@ function Login() {
             ግባ
           </Btn>
         </div>
-        <details className="mt-4 text-sm">
-          <summary className="cursor-pointer text-muted">የመዝገብ ስሞች ከወርክቡክ</summary>
-          <ul className="mt-2 space-y-1 text-xs leading-relaxed">
-            {SEED_USERS.map((user) => (
-              <li key={user.username}>
-                <span className="font-medium">{user.username}</span> · {user.password} · {user.role}
-              </li>
-            ))}
-          </ul>
-        </details>
       </form>
     </main>
   );
