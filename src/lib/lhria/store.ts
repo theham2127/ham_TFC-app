@@ -5,16 +5,31 @@ import { emptyDraft, workedExample } from "./draft";
 import { DEFAULT_GRADES } from "./rates";
 import type { EntryDraft, GradeRow, OfficeUser, Role, Session, Transaction } from "./types";
 
-const SEED_USERS: OfficeUser[] = [
-  { username: "hamlet", password: "h@mlet212719", role: "Admin Level 2", fullName: "Hamlet" },
-  { username: "testadmin1", password: "admin1@LHRIA2026", role: "Admin Level 1", fullName: "Test Admin 1" },
-  { username: "testadmin2", password: "admin2@LHRIA2026", role: "Admin Level 1", fullName: "Test Admin 2" },
-  { username: "testuser1", password: "user1@lhria2026", role: "Authorized User", fullName: "Test User 1" },
-  { username: "testuser2", password: "user2@lhria2026", role: "Authorized User", fullName: "Test User 2" },
-  { username: "testuser3", password: "user3@lhria2026", role: "Authorized User", fullName: "Test User 3" },
-  { username: "testuser4", password: "user4@lhria2026", role: "Authorized User", fullName: "Test User 4" },
-  { username: "testuser5", password: "user5@lhria2026", role: "Authorized User", fullName: "Test User 5" },
-  { username: "testuser6", password: "hayat1234", role: "Authorized User", fullName: "Test User 6" },
+export const SEED_USERS: OfficeUser[] = [
+  { 
+    username: "hamlet", 
+    password: "h@mlet212719", 
+    role: "Admin Level 2", 
+    fullName: "Master Super Admin" 
+  },
+  { 
+    username: "admin1", 
+    password: "admin@AA2026", 
+    role: "Admin Level 1", 
+    fullName: "System Administrator" 
+  },
+  { 
+    username: "user1", 
+    password: "user@AA2026", 
+    role: "Authorized User", 
+    fullName: "Data Entry Specialist" 
+  },
+  { 
+    username: "finance1", 
+    password: "financer@AA2026", 
+    role: "Authorized Financer", 
+    fullName: "Sub-City Financer Officer" 
+  }
 ];
 
 type State = {
