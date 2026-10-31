@@ -250,8 +250,7 @@ export function EntryForm({ onSaved }: { onSaved: (id: string) => void }) {
             />
             <TextField
               label="ያዘጋጀው ባለሙያ ሥም"
-              value={draft.officer}
-              onChange={(officer) => setDraft({ officer })}
+              value={specialistName} readOnly={true}
             />
           </div>
         </Panel>
