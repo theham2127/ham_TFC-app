@@ -224,13 +224,36 @@ export function EntryForm({ onSaved }: { onSaved: (id: string) => void }) {
 
         <Panel title="ክፍያ እና አዘጋጅ">
           <div className="grid gap-4 sm:grid-cols-2">
-            <NumField
+            <TextField
               label="የንብረት ባለቤትነት ድርሻ መጠን በ %"
               suffix="%"
-              hint="ሙሉ ይዞታ 100። ግማሽ 50። የቴምብርና የአሹራ በዚህ ድርሻ ይባዛሉ።"
-              value={draft.sharePercent}
-              onChange={(sharePercent) => setDraft({ sharePercent })}
+              hint="ሙሉ ይዞታ 100። እንደ 1/2፣ 1/3 ወይም 50.333 ያሉ ክፍልፋዮችን ማስገባት ይችላሉ።"
+              value={draft.sharePercent ?? 100} 
+              onChange={(rawValue) => {
+                // Allow empty input so user can type freely
+                if (!rawValue) {
+                  setDraft({ sharePercent: "" });
+                  return;
+                }
+
+                // If input contains a fraction line (e.g., "1/3")
+                if (rawValue.includes('/')) {
+                  const [numerator, denominator] = rawValue.split('/').map(Number);
+                  if (denominator && !isNaN(numerator)) {
+                    const parsedFloat = (numerator / denominator) * 100;
+                    // Fix to 3 decimal places
+                    setDraft({ sharePercent: Number(parsedFloat.toFixed(3)) });
+                  }
+                } else {
+                  // Fallback for regular integer/decimal typing
+                  const parsedFloat = parseFloat(rawValue);
+                  if (!isNaN(parsedFloat)) {
+                    setDraft({ sharePercent: Number(parsedFloat.toFixed(3)) });
+                  }
+                }
+              }}
             />
+
             <SelectField
               label="የክፍያ ሁኔታ"
               value={draft.paymentStatus}
