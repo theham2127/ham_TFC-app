@@ -1,4 +1,4 @@
-export const ROLES = ["Authorized User", "Admin Level 1", "Admin Level 2"] as const;
+export const ROLES = ["Authorized User", "Authorized Financer", "Admin Level 1", "Admin Level 2"] as const;
 export type Role = (typeof ROLES)[number];
 
 export const PROPERTY_TYPES = [
@@ -51,8 +51,8 @@ export const TENURES = ["ነባር", "ሊዝ", "ነባርና ሊዝ"] as const;
 export const PAYMENT_STATUSES = ["የሚከፈል", "የተከፈለ", "ያልተከፈለ"] as const;
 export type PaymentStatus = (typeof PAYMENT_STATUSES)[number];
 
-export const SUBCITY = "ንፋስ ስልክ ላፍቶ";
-export const OFFICE_AM = "በአዲስ አበባ ከተማ አስተዳደር የመሬት ይዞታ ምዝገባ እና መረጃ ኤጄንሲ";
+export const SUBCITY = ["አዲስ ከተማ", "አቃቂ ቃሊቲ", "አራዳ", "ቦሌ", "ጉለሌ", "ቂርቆስ", "ኮልፌ ቀራንዮ", "ለሚ ኩራ", "ልደታ", "ንፋስ ስልክ ላፍቶ", "የካ"] as const;
+export const OFFICE_AM = ["በአዲስ አበባ ከተማ አስተዳደር የመሬት ይዞታና መሬት-ነክ ንብረት ምዝገባ እና መረጃ ኤጄንሲ", "በአዲስ አበባ ከተማ አስተዳደር የመሬት ልማትና አስተዳደር ቢሮ"] as const;
 export const OFFICE_SHORT = "LHRIA · Nefas Silk Lafto";
 
 export const WOREDAS = Array.from({ length: 16 }, (_, i) => `[${String(i + 1).padStart(2, "0")}]`);
