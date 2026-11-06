@@ -28,7 +28,7 @@ export const SEED_USERS: OfficeUser[] = [
     username: "finance1", 
     password: "financer@AA2026", 
     role: "Authorized Financer", 
-    fullName: "Sub-City Financer Officer" 
+    fullName: "Sub-City Finance Officer" 
   }
 ];
 
