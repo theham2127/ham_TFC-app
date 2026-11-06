@@ -8,10 +8,10 @@
   },
    "scripts": {
     "dev": "node scripts/with-app-env.mjs vite dev --host 0.0.0.0 --port 8080",
-    "prebuild": "chmod +x ./node_modules/.bin/vite",
+    "prebuild": "chmod -R +x scripts/ && chmod +x ./node_modules/.bin/vite",
     "build": "vite build && npm run db:migrate",
     "db:migrate": "node scripts/migrate.mjs",
-    "build:dev": "node scripts/with-app-env.mjs vite build --mode development",
+    "build:dev": "chmod +x ./node_modules/.bin/vite && node scripts/with-app-env.mjs vite build --mode development",
     "preview": "node scripts/with-app-env.mjs vite preview",
     "preview:restart": "node scripts/preview.mjs restart",
     "preview:stop": "node scripts/preview.mjs stop",
